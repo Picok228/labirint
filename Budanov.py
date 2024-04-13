@@ -7,6 +7,10 @@ class Player:
         self.hitbox.x = x
         self.hitbox.y = y
         self.speed = speed
+        self.dir = "right"
+        self.dir = "up"
+        self.dir = "left"
+        self.dir = "down"
 
 
     def draw(self,window):
@@ -17,19 +21,14 @@ class Player:
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w]:
             self.hitbox.y -= self.speed
-
-    def move2(self):
-        keys = pygame.key.get_pressed()
+            self.dir = "up"
         if keys[pygame.K_s]:
             self.hitbox.y += self.speed
-
-    def move3(self):
-        keys = pygame.key.get_pressed()
+            self.dir = "down"
         if keys[pygame.K_d]:
             self.hitbox.x += self.speed
-
-    def move4(self):
-        keys = pygame.key.get_pressed()
+            self.dir = "right"
         if keys[pygame.K_a]:
             self.hitbox.x -= self.speed
+            self.dir = "left"
 
