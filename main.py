@@ -1,5 +1,5 @@
-import move
 import pygame
+import move
 from Budanov import Player
 from Porohenko import Pogonec
 from WALL import Wall
@@ -9,6 +9,9 @@ pygame.mixer.music.load("optimys_prime/pirati_karibskogo_morja.mp3")
 pygame.mixer.music.play(-1)
 window = pygame.display.set_mode((700,500))
 fps = pygame.time.Clock()
+
+sount = pygame.mixer.Sound("optimys_prime/pirati_karibskogo_morja.mp3")
+sount.play()
 
 bacground = pygame.transform.scale(
     pygame.image.load("optimys_prime/img_6.png"),(700,500)
@@ -37,6 +40,7 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
+
         if event.type == pygame.MOUSEBUTTONDOWN:
                 print(pygame.mouse.get_pos())
     if budan.hitbox.colliderect(poroh.hitbox):
